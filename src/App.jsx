@@ -3,6 +3,7 @@ import './css/main.css';
 import DisplayTodos from './Components/DisplayTodos';
 import Todos from './Components/Todos'; 
 import { motion } from 'framer-motion';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         transition={{ type: 'spring', duration: 1 }}
       >
         <Todos />
+        <Toaster/>
         <DisplayTodos />
       </motion.div>
     </div>

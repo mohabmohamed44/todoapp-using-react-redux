@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addTodos } from "../redux/reducer";
 import { GoPlus } from "react-icons/go";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 const mapStateToProps = (state) => {
   return {
@@ -25,13 +26,14 @@ const Todos = (props) => {
 
   const add = () => {
     if (todo === "") {
-      alert("Input is Empty");
+      toast.error("Input is Empty");
     } else {
       props.addTodo({
         id: Math.floor(Math.random() * 1000),
         item: todo,
         completed: false,
       });
+      toast.success("Todo Added");
       setTodo("");
     }
   };
